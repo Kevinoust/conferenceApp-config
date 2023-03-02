@@ -1,0 +1,5 @@
+IP_DB: localhost
+PORT_DB: 9104
+DB_NAME: SESSION_SERVICE_DB
+DB_USER: Postgresql
+DB_PASSWORD: Welcome
