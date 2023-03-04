@@ -1,7 +1,9 @@
 DB:
   TYPE: POSTGRESQL
-  CONNECTION_URL: jdbc:postgresql://localhost:9104/SESSION_SERVICE_DB
+  URL: jdbc:postgresql://localhost:9104/SESSION_SERVICE_DB
   USERNAME: postgres
   PASSWORD: Welcome
-SERVICE_REGISTRY_URL: http://localhost:8761/eureka
-ZIPKIN_URL: http://localhost:9411/
+SERVICE_REGISTRY:
+  URL: http://localhost:8761/eureka
+ZIPKIN:
+  URL: http://localhost:9411/
