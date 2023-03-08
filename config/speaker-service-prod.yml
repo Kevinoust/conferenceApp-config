@@ -6,7 +6,7 @@ DB:
 ZIPKIN:                                   # zipkin
   URL: openzipkin
 SERVICE_REGISTRY:                         # eureka
-  URL: service-registry/eureka
+  URL: service-registry
 
 spring:
   jpa:
