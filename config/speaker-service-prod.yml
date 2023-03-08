@@ -3,12 +3,25 @@ DB:
   URL: jdbc:postgresql://speaker-service-db/SPEAKER_SERVICE_DB
   USERNAME: postgres
   PASSWORD: Welcome
-#CLOUD_CONFIG_SERVER:
-#  HOST: localhost
-#  PORT: 9296
-ZIPKIN:
-  HOST: openzipkin
-  PORT: 9411
-SERVICE_REGISTRY:
-  HOST: service-registry
-  PORT: 8761
+ZIPKIN:                                   # zipkin
+  URL: openzipkin
+SERVICE_REGISTRY:                         # eureka
+  URL: service-registry/eureka
+
+spring:
+  jpa:
+    database: ${DB.TYPE}
+    show-sql: true
+  datasource:
+    url: ${DB.URL}
+    username: ${DB.USERNAME}
+    password: ${DB.PASSWORD}
+  zipkin:
+    base-url: ${ZIPKIN.URL}
+ 
+eureka:
+  instance:
+    preferIpAddress: true
+  client:
+    serviceUrl:
+      defaultZone: ${SERVICE_REGISTRY.URL}
