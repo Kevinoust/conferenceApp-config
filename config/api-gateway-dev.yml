@@ -35,11 +35,11 @@ spring:
           uri: lb://TIMESLOT-SERVICE
           predicates:
             - Path=/api/*/timeslots/**
-   #    - id: WORKSHOP-SERVICE
-   #      uri: lb://WORKSHOP-SERVICE
-   #      predicates:
-   #        - Path=/workshops/**
-   #    - id: ATTENDEE-TICKET-SERVICE
-   #      uri: lb://ATTENDEE-TICKET-SERVICE
-   #      predicates:
-   #        - Path=/attendeeTickets/**
+        - id: WORKSHOP-SERVICE
+          uri: lb://WORKSHOP-SERVICE
+          predicates:
+            - Path=/workshops/**
+        - id: ATTENDEE-TICKET-SERVICE
+          uri: lb://ATTENDEE-TICKET-SERVICE
+          predicates:
+            - Path=/attendeeTickets/**
