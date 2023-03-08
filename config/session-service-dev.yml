@@ -1,9 +1,27 @@
 DB:
   TYPE: POSTGRESQL
-  URL: jdbc:postgresql://localhost:9104/SESSION_SERVICE_DB
+  URL: jdbc:postgresql://localhost:9103/SESSION_SERVICE_DB
   USERNAME: postgres
   PASSWORD: Welcome
-SERVICE_REGISTRY:
+ZIPKIN:                                   # zipkin
+  URL: http://localhost:9411
+SERVICE_REGISTRY:                         # eureka
   URL: http://localhost:8761/eureka
-ZIPKIN:
-  URL: http://localhost:9411/
+
+spring:
+  jpa:
+    database: ${DB.TYPE}
+    show-sql: true
+  datasource:
+    url: ${DB.URL}
+    username: ${DB.USERNAME}
+    password: ${DB.PASSWORD}
+  zipkin:
+    base-url: ${ZIPKIN.URL}
+ 
+eureka:
+  instance:
+    preferIpAddress: true
+  client:
+    serviceUrl:
+      defaultZone: ${SERVICE_REGISTRY.URL}
