@@ -1,6 +1,6 @@
 DB:
   TYPE: POSTGRESQL
-  URL: jdbc:postgresql://timeslot-service:9101/TIMESLOT_SERVICE_DB
+  URL: jdbc:postgresql://timeslot-service-db:9101/TIMESLOT_SERVICE_DB
   USERNAME: postgres
   PASSWORD: Welcome
 ZIPKIN:                                   # zipkin
