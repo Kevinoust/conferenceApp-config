@@ -3,3 +3,12 @@ DB:
   URL: jdbc:postgresql://speaker-service-db:9103/SPEAKER_SERVICE_DB
   USERNAME: postgres
   PASSWORD: Welcome
+#CLOUD_CONFIG_SERVER:
+#  HOST: localhost
+#  PORT: 9296
+ZIPKIN:
+  HOST: openzipkin
+  PORT: 9411
+SERVICE_REGISTRY:
+  HOST: service-registry
+  PORT: 8761
