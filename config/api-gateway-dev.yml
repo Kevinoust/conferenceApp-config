@@ -1,10 +1,12 @@
 SERVICE_REGISTRY:
   URL: http://localhost:8761/eureka
+LOG:
+  ENABLED: true
 
 ###########################
 log:
   request:
-    enabled: true     # enable logging for request/response
+    enabled: ${LOG_ENABLED}     # enable logging for request/response
     
 eureka:
   instance:
