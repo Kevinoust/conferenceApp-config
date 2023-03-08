@@ -1,1 +1,59 @@
+DB:
+  TYPE: POSTGRESQL
+  URL: jdbc:postgresql://localhost:9105/WORKSHOP_SERVICE_DB
+  USERNAME: postgres
+  PASSWORD: Welcome
+ZIPKIN:                                   # zipkin
+  URL: http://localhost:9411
+SERVICE_REGISTRY:                         # eureka
+  URL: http://localhost:8761/eureka
 
+spring:
+  jpa:
+    database: ${DB.TYPE}
+    show-sql: true
+  datasource:
+    url: ${DB.URL}
+    username: ${DB.USERNAME}
+    password: ${DB.PASSWORD}
+  zipkin:
+    base-url: ${ZIPKIN.URL}
+ 
+eureka:
+  instance:
+    preferIpAddress: true
+  client:
+    serviceUrl:
+      defaultZone: ${SERVICE_REGISTRY.URL}
+
+# actuator
+management:
+  health:
+    circuitbreakers:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: health
+  endpoint:
+    health:
+      show-details: always
+
+# circuit breaker
+resilience4j:
+  circuitbreaker:
+    configs:
+      default:
+        registerHealthIndicator: true
+    instances:
+      SERVICE-CIRCUIT-BREAKER:
+        baseConfig: default
+        registerHealthIndicator: true
+        eventConsumerBufferSize: 10
+        failureRateThreshold: 50
+        minimumNumberOfCalls: 5
+        automaticTransitionFromOpenToHalfOpenEnabled: true
+        waitDurationInOpenState: 5s
+        permittedNumberOfCallsInHalfOpenState: 3
+        slidingWindowSize: 10
+        slidingWindowType: COUNT_BASED
