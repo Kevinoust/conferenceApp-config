@@ -27,19 +27,19 @@ spring:
           uri: lb://speaker-service
           predicates:
             - Path=/api/*/speakers/**
-        - id: TAG-SERVICE
-          uri: lb://TAG-SERVICE
+        - id: tag-service
+          uri: lb://tag-service
           predicates:
             - Path=/api/*/tags/**
-        - id: TIMESLOT-SERVICE
-          uri: lb://TIMESLOT-SERVICE
+        - id: timeslot-service
+          uri: lb://timeslot-service
           predicates:
             - Path=/api/*/timeslots/**
-        - id: WORKSHOP-SERVICE
-          uri: lb://WORKSHOP-SERVICE
+        - id: workshop-service
+          uri: lb://workshop-service
           predicates:
-            - Path=/workshops/**
-        - id: ATTENDEE-TICKET-SERVICE
-          uri: lb://ATTENDEE-TICKET-SERVICE
+            - Path=/api/*/workshops/**
+        - id: attendee-ticket-service
+          uri: lb://attendee-ticket-service
           predicates:
-            - Path=/attendeeTickets/**
+            - Path=/api/*/attendeeTickets/**
