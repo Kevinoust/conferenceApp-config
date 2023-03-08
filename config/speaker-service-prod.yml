@@ -1,0 +1,5 @@
+DB:
+  TYPE: POSTGRESQL
+  URL: jdbc:postgresql://speaker-service-db:9103/SPEAKER_SERVICE_DB
+  USERNAME: postgres
+  PASSWORD: Welcome
