@@ -3,12 +3,7 @@ DB:
   URL: jdbc:postgresql://localhost:9103/SPEAKER_SERVICE_DB
   USERNAME: postgres
   PASSWORD: Welcome
-#CLOUD_CONFIG_SERVER:
-#  HOST: localhost
-#  PORT: 9296
 ZIPKIN:
-  HOST: localhost
-  PORT: 9411
+  URL: localhost:9411
 SERVICE_REGISTRY:
-  HOST: localhost
-  PORT: 8761
+  URL: localhost:8761/eureka
