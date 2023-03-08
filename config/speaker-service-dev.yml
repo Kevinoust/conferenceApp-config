@@ -3,7 +3,3 @@ DB:
   URL: jdbc:postgresql://localhost:9103/SPEAKER_SERVICE_DB
   USERNAME: postgres
   PASSWORD: Welcome
-SERVICE_REGISTRY:
-  URL: http://localhost:8761/eureka
-ZIPKIN:
-  URL: http://localhost:9411/
