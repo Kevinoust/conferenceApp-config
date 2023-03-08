@@ -1,0 +1,44 @@
+SERVICE_REGISTRY:
+  URL: http://service-registry/eureka
+LOG:
+  ENABLED: false
+
+###########################
+log:
+  request:
+    enabled: ${LOG_ENABLED}     # enable logging for request/response
+    
+eureka:
+  instance:
+    preferIpAddress: true
+  client:
+    serviceUrl:
+      defaultZone: ${SERVICE_REGISTRY.URL}
+
+cloud:
+  gateway:
+    routes:
+      - id: session-service
+        uri: lb://session-service
+        predicates:
+          - Path=/api/*/sessions/**
+      - id: SPEAKER-SERVICE
+        uri: lb://SPEAKER-SERVICE
+        predicates:
+          - Path=/api/*/speakers/**
+      - id: TAG-SERVICE
+        uri: lb://TAG-SERVICE
+        predicates:
+          - Path=/api/*/tags/**
+      - id: TIMESLOT-SERVICE
+        uri: lb://TIMESLOT-SERVICE
+        predicates:
+          - Path=/api/*/timeslots/**
+ #    - id: WORKSHOP-SERVICE
+ #      uri: lb://WORKSHOP-SERVICE
+ #      predicates:
+ #        - Path=/workshops/**
+ #    - id: ATTENDEE-TICKET-SERVICE
+ #      uri: lb://ATTENDEE-TICKET-SERVICE
+ #      predicates:
+ #        - Path=/attendeeTickets/**
