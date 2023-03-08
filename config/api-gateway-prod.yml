@@ -1,7 +1,7 @@
 SERVICE_REGISTRY:
   URL: http://service-registry:8761/eureka
 LOG:
-  ENABLED: false
+  ENABLED: true
 
 ###########################
 log:
