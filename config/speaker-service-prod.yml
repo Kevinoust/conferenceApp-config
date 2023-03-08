@@ -4,9 +4,9 @@ DB:
   USERNAME: postgres
   PASSWORD: Welcome
 ZIPKIN:                                   # zipkin
-  URL: openzipkin
+  URL: http://openzipkin:9411
 SERVICE_REGISTRY:                         # eureka
-  URL: service-registry
+  URL: http://service-registry:8761/eureka
 
 spring:
   jpa:
