@@ -1,1 +1,2 @@
-
+SERVICE-REGISTRY:
+  URL: http://service-registry:8761/eureka
