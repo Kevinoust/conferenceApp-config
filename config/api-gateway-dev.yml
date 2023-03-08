@@ -22,8 +22,8 @@ cloud:
         uri: lb://session-service
         predicates:
           - Path=/api/*/sessions/**
-      - id: SPEAKER-SERVICE
-        uri: lb://SPEAKER-SERVICE
+      - id: speaker-service
+        uri: lb://speaker-service
         predicates:
           - Path=/api/*/speakers/**
       - id: TAG-SERVICE
