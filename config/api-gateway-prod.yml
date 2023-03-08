@@ -6,7 +6,7 @@ LOG:
 ###########################
 log:
   request:
-    enabled: ${LOG_ENABLED}     # enable logging for request/response
+    enabled: ${LOG.ENABLED}     # enable logging for request/response
     
 eureka:
   instance:
