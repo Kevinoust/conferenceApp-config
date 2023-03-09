@@ -1,12 +1,12 @@
 DB:
   TYPE: POSTGRESQL
-  URL: jdbc:postgresql://localhost:9106/ATTENDEE_TICKET_SERVICE_DB
+  URL: jdbc:postgresql://attendee-ticket-service-db/ATTENDEE_TICKET_SERVICE_DB
   USERNAME: postgres
   PASSWORD: Welcome
 ZIPKIN:                                   # zipkin
-  URL: http://localhost:9411
+  URL: http://openzipkin:9411
 SERVICE_REGISTRY:                         # eureka
-  URL: http://localhost:8761/eureka
+  URL: http://service-registry:8761/eureka
 
 spring:
   jpa:
