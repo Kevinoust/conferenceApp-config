@@ -12,6 +12,8 @@ spring:
   jpa:
     database: ${DB.TYPE}
     show-sql: true
+    hibernate:
+      ddl-auto: update
   datasource:
     url: ${DB.URL}
     username: ${DB.USERNAME}
