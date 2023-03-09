@@ -1,6 +1,6 @@
 DB:
   TYPE: POSTGRESQL
-  URL: jdbc:postgresql://localhost:9106/ATTEND_TICKET_SERVICE_DB
+  URL: jdbc:postgresql://localhost:9106/ATTENDEE_TICKET_SERVICE_DB
   USERNAME: postgres
   PASSWORD: Welcome
 ZIPKIN:                                   # zipkin
