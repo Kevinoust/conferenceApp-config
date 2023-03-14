@@ -1,4 +1,4 @@
-spring:
-  mvc:
-    pathmatch:
-      matching-strategy: ANT_PATH_MATCHER         # to resolve resolve the compatibility issue of Springfox 3 and Spring Boot 2.7
+# spring:
+#   mvc:
+#     pathmatch:
+#       matching-strategy: ANT_PATH_MATCHER         # to resolve resolve the compatibility issue of Springfox 3 and Spring Boot 2.7
